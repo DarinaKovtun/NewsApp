@@ -14,14 +14,15 @@
             let view = UIScrollView()
             
             view.showsVerticalScrollIndicator = false
-            
-            
             return view
         }()
         private lazy var contentView: UIView = UIView()
         
         private lazy var newsImageView: UIImageView = {
             let imageView = UIImageView()
+            
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
             return imageView
         }()
 
@@ -104,8 +105,8 @@
                 }
 
                 newsImageView.snp.makeConstraints { make in
-                    make.top.equalTo(contentView.snp.topMargin).offset(10)
-                    make.leading.trailing.equalToSuperview().inset(10)
+                    make.top.equalTo(contentView)
+                    make.leading.trailing.equalToSuperview()
                     make.height.equalTo(300)
                 }
                 dateLabel.snp.makeConstraints { make in

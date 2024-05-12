@@ -1,21 +1,20 @@
 //
-//  BusinessViewModel.swift
+//  TechnologyViewModel.swift
 //  NewsApp
 //
-//  Created by Darina Kovtun on 02.05.2024.
+//  Created by Darina Kovtun on 08.05.2024.
 //
 
 import Foundation
 
-final class BusinessViewModel: NewsListViewModel {
+final class TechnologyViewModel: NewsListViewModel {
     override func loadData(searchText: String?) {
-        super.loadData(searchText: searchText)
+        super.loadData(searchText: nil)
         
-        ApiManager.getNews(from: .business,
+        ApiManager.getNews(from: .technology,
                            page: page,
                            searchText: searchText) { [weak self] result in
             self?.handleResult(result)
-            
         }
     }
     

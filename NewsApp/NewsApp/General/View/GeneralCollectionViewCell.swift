@@ -8,9 +8,17 @@
 import UIKit
 import SnapKit
 
-
 final class GeneralCollectionViewCell: UICollectionViewCell {
     // MARK: - GUI Variables
+    private lazy var scrollView: UIScrollView = {
+        let view = UIScrollView()
+        
+        view.showsVerticalScrollIndicator = false
+        
+        return view
+    }()
+    private lazy var contenttView: UIView = UIView()
+    
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         
@@ -37,7 +45,6 @@ final class GeneralCollectionViewCell: UICollectionViewCell {
     }()
 
     // MARK: - Initialization
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -65,7 +72,7 @@ final class GeneralCollectionViewCell: UICollectionViewCell {
         addSubviews([imageView,
                      blackView,
                      titleLabel])
-  
+        
         setupConstraints()
     }
     

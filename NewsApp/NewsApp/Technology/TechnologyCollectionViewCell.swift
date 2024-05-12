@@ -1,14 +1,13 @@
 //
-//  DetailsCollectionViewCell.swift
+//  TechnologyCollectionViewCell.swift
 //  NewsApp
 //
-//  Created by Darina Kovtun on 17.04.2024.
+//  Created by Darina Kovtun on 08.05.2024.
 //
-
 import UIKit
 import SnapKit
 
-final class DetailsCollectionViewCell: UICollectionViewCell {
+final class TechnologyCollectionViewCell: UICollectionViewCell {
     
     // MARK: - GUI Variables
     private lazy var imageView: UIImageView = {
